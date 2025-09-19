@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,force:appHostable,force:lightningQuickActionWithoutHeader" access="global">
+    <aura:attribute name="isOpen" type="Boolean" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- Conditionally render the modal -->
+    <aura:if isTrue="{!v.isOpen}">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close" class="slds-modal__close" onclick="{!c.closeModal}" />
+                    <h2 class="slds-text-heading_medium">Créer un nouveau compte</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <!-- Embed the LWC component here -->
+                    <c:pappersFrame aura:id="pappersFrame" oncloseModal="{!c.closeModal}"/>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Cartographie du compte" icon-name="utility:world">
+        <div class="toolbar">
+            <!-- Bouton pour le mode plein écran -->
+            <lightning-button-icon icon-name={expandIcon}
+                                   alternative-text="Toggle Fullscreen"
+                                   onclick={toggleExpand}></lightning-button-icon>
+        </div>
+        <div class="graph-container"></div>
+    </lightning-card>
+</template>

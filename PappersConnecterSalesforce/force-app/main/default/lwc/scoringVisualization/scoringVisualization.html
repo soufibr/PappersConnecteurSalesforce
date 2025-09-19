@@ -1,0 +1,39 @@
+<template>
+    <div class="scoring-section">
+        <!-- Title -->
+        <h2 class="scoring-title">Scoring Financier</h2>
+
+        <!-- Scoring Cards Container -->
+        <div class="scoring-container">
+            <!-- Scoring Note -->
+            <div class="scoring-card scoring-note-card">
+                <div class="scoring-label">Scoring Note</div>
+                <div class="scoring-note">
+                    <span>{scoringNote}</span>
+                </div>
+            </div>
+
+            <!-- Scoring Score -->
+            <div class="scoring-card scoring-score-card">
+                <div class="scoring-label">Scoring Score</div>
+                <div class="scoring-score">
+                    <svg class="progress-ring" width="140" height="140">
+                        <circle
+                            class="progress-ring__background"
+                            cx="70"
+                            cy="70"
+                            r="60"
+                        ></circle>
+                        <circle
+                            class="progress-ring__circle"
+                            cx="70"
+                            cy="70"
+                            r="60"
+                        ></circle>
+                    </svg>
+                    <div class="score-text">{scoringScore}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
