@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typologie_de_compte__c</fullName>
+    <label>Typologie de compte</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Grand compte</fullName>
+                <default>false</default>
+                <label>Grand compte</label>
+            </value>
+            <value>
+                <fullName>Compte standard</fullName>
+                <default>false</default>
+                <label>Compte standard</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

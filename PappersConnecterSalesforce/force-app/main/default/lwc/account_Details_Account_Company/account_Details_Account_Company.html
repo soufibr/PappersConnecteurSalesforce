@@ -1,0 +1,135 @@
+<template>
+    <div class="financial-table-container">
+        <h2>Finances de l'entreprise</h2>
+        
+        <div class="financial-table-container">
+            <!-- Autres sections du tableau -->
+            
+            <canvas id="pieChart" width="400" height="400"></canvas>
+        </div>
+        <table class="financial-table chic-table">
+            <thead>
+                <!-- Entêtes Performance -->
+                <tr class="tr-header">
+                    <th>Performance</th>
+                    <template for:each={years} for:item="year">
+                        <th key={year}>{year}</th>
+                    </template>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Section Performance -->
+                <template for:each={performanceRows} for:item="row">
+                    <tr key={row.key}>
+                        <th>{row.label}</th>
+                        <template for:each={row.values} for:item="value">
+                            <td key={value.year}>{value.amount}</td>
+                        </template>
+                    </tr>
+                </template>
+
+                <!-- Entêtes Croissance -->
+                <tr class="tr-header">
+                    <th>Croissance</th>
+                    <template for:each={years} for:item="year">
+                        <th key={year}>{year}</th>
+                    </template>
+                </tr>
+                <!-- Section Croissance -->
+                <template for:each={growthRows} for:item="row">
+                    <tr key={row.key}>
+                        <th>{row.label}</th>
+                        <template for:each={row.values} for:item="value">
+                            <td key={value.year}>{value.amount}%</td>
+                        </template>
+                    </tr>
+                </template>
+
+                <!-- Entêtes Gestion BFR -->
+                <tr class="tr-header">
+                    <th>Gestion BFR</th>
+                    <template for:each={years} for:item="year">
+                        <th key={year}>{year}</th>
+                    </template>
+                </tr>
+                <!-- Section Gestion BFR -->
+                <template for:each={bfrRows} for:item="row">
+                    <tr key={row.key}>
+                        <th>{row.label}</th>
+                        <template for:each={row.values} for:item="value">
+                            <td key={value.year}>{value.amount}</td>
+                        </template>
+                    </tr>
+                </template>
+
+                <!-- Entêtes Autonomie Financière -->
+                <tr class="tr-header">
+                    <th>Autonomie Financière</th>
+                    <template for:each={years} for:item="year">
+                        <th key={year}>{year}</th>
+                    </template>
+                </tr>
+                <!-- Section Autonomie Financière -->
+                <template for:each={autonomyRows} for:item="row">
+                    <tr key={row.key}>
+                        <th>{row.label}</th>
+                        <template for:each={row.values} for:item="value">
+                            <td key={value.year}>{value.amount}</td>
+                        </template>
+                    </tr>
+                </template>
+
+                <!-- Entêtes Solvabilité -->
+                <tr class="tr-header">
+                    <th>Solvabilité</th>
+                    <template for:each={years} for:item="year">
+                        <th key={year}>{year}</th>
+                    </template>
+                </tr>
+                <!-- Section Solvabilité -->
+                <template for:each={solvencyRows} for:item="row">
+                    <tr key={row.key}>
+                        <th>{row.label}</th>
+                        <template for:each={row.values} for:item="value">
+                            <td key={value.year}>{value.amount}</td>
+                        </template>
+                    </tr>
+                </template>
+
+                <!-- Entêtes Rentabilité -->
+                <tr class="tr-header">
+                    <th>Rentabilité</th>
+                    <template for:each={years} for:item="year">
+                        <th key={year}>{year}</th>
+                    </template>
+                </tr>
+                <!-- Section Rentabilité -->
+                <template for:each={profitabilityRows} for:item="row">
+                    <tr key={row.key}>
+                        <th>{row.label}</th>
+                        <template for:each={row.values} for:item="value">
+                            <td key={value.year}>{value.amount}</td>
+                        </template>
+                    </tr>
+                </template>
+
+                <!-- Entêtes Structure d'Activité -->
+                <tr class="tr-header">
+                    <th>Structure d'Activité</th>
+                    <template for:each={years} for:item="year">
+                        <th key={year}>{year}</th>
+                    </template>
+                </tr>
+                <!-- Section Structure d'Activité -->
+                <template for:each={activityStructureRows} for:item="row">
+                    <tr key={row.key}>
+                        <th>{row.label}</th>
+                        <template for:each={row.values} for:item="value">
+                            <td key={value.year}>{value.amount}</td>
+                        </template>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>

@@ -1,0 +1,28 @@
+<template>
+    <template if:true={siret}>
+        <div class="cartography-checker-container">
+            
+            <!-- Action Area -->
+            <div class="action-container">
+                <!-- Link to Account if exists -->
+                <template if:true={existingAccountId}>
+                    <lightning-button
+                        label="Voir le compte"
+                        variant="success"
+                        onclick={navigateToAccount}
+                        class="view-account-button"
+                    ></lightning-button>
+                </template>
+
+                <!-- Button to Create Account if it doesn't exist -->
+                <template if:false={existingAccountId}>
+                    <lightning-button
+                        label="Créer le compte"
+                        variant="brand"
+                        onclick={handleCreateAccount}
+                    ></lightning-button>
+                </template>
+            </div>
+        </div>
+    </template>
+</template>
